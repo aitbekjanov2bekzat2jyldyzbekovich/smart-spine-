@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SmartSpine</string>
+    <string name="title_activity_main">SmartSpine</string>
+    <string name="package_name">kg.smartspine.app</string>
+    <string name="custom_url_scheme">kg.smartspine.app</string>
+</resources>
