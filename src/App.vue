@@ -1,4 +1,5 @@
 <script setup>
+import { connectESP32 } from './services/bluetooth'
 import { computed, ref } from 'vue'
 
 const activeTab = ref('overview')
@@ -37,6 +38,18 @@ function resetDemo() {
   isMonitoring.value = true
 }
 
+const bluetoothStatus = ref('Не подключено')
+
+async function handleConnect() {
+  try {
+    bluetoothStatus.value = 'Подключение...'
+    await connectESP32()
+    bluetoothStatus.value = 'ESP32 подключён'
+  } catch (error) {
+    bluetoothStatus.value = 'Не удалось подключиться'
+  }
+}
+
 const history = [
   { time: '09:00', angle: 12, balance: 50 },
   { time: '10:00', angle: 8, balance: 54 },
@@ -47,6 +60,11 @@ const history = [
 </script>
 
 <template>
+  <button @click="handleConnect">
+  Подключить ESP32
+</button>
+
+<p>{{ bluetoothStatus }}</p>
   <div class="app-shell">
     <header class="topbar">
       <a class="brand" href="#" @click.prevent="activeTab = 'overview'">
