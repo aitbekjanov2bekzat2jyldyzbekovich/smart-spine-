@@ -448,7 +448,7 @@ const history = [
                       upperAngle === null ? "—" : Math.round(upperAngle) + "°"
                     }}
                   </b>
-                  <small>Верхняя часть (MPU)</small>
+                  <small>Верхняя часть </small>
                 </div>
               </div>
 
@@ -461,7 +461,7 @@ const history = [
                       lowerAngle === null ? "—" : Math.round(lowerAngle) + "°"
                     }}
                   </b>
-                  <small>Поясница (LSM)</small>
+                  <small>Поясница </small>
                 </div>
               </div>
             </div>
@@ -645,28 +645,6 @@ const history = [
           </div>
         </article>
       </template>
-
-      <section class="controls-panel">
-        <div>
-          <p class="eyebrow">ДЕМО-УПРАВЛЕНИЕ</p>
-          <h3>Проверить интерфейс</h3>
-          <p>Сгенерируйте новые тестовые показатели.</p>
-        </div>
-        <div class="control-actions">
-          <button
-            class="secondary-button"
-            @click="isMonitoring = !isMonitoring"
-          >
-            {{ isMonitoring ? "Поставить на паузу" : "Продолжить" }}</button
-          ><button
-            class="primary-button"
-            @click="simulateReading"
-            :disabled="!isMonitoring"
-          >
-            Обновить данные <span>↻</span>
-          </button>
-        </div>
-      </section>
 
       <footer>
         <div class="footer-brand">Smart<span>Spine</span></div>
